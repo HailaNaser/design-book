@@ -19,7 +19,7 @@ function SecondPage() {
             setNamee("")
             setEmail("")
             setPass("")
-            // navigate('/Books')
+            navigate('/Books')
         }
          
     }
