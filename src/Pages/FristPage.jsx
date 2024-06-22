@@ -1,26 +1,26 @@
+
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
- function FristPage() {
-    const [name , setName] = useState("");
-    const [pass , setPassword] = useState("");
+function FristPage (){
+    const  [emailValid , setEmailValid] = useState("");
+    const [passwordValid , setPasswordValid] = useState("");
+    const navegate = useNavigate();
 
-    const handleClick = ()=> {
-      if(localStorage !== null ){
-        const data = localStorage.getItem("")
-        let converData = JSON.parse(saved);
-        // return converData
-        // <Link to='/Books'>
-  
-      }
+    const handleClick = () => {
+        if(localStorage.getItem("theEmail") == emailValid && localStorage.getItem('thePass') == passwordValid){
+            console.log(localStorage.getItem("theName"))
+            navegate('/Books')
+        }
     }
-  return (
+    return (
     <div className='content'>
         <div className="container">
             <div className="left">
-            <input type='text' placeholder='enter your name'></input>
-            <input type='password' placeholder='enter your Age'></input>
-            <button className='submit'>SUBMIT</button>
+            <input type='text' placeholder='enter your Email' value={emailValid} onChange={(e)=> {setEmailValid(e.target.value)}}></input>
+            <input type='password' placeholder='enter your Password' value={passwordValid} onChange={(e)=> {setPasswordValid(e.target.value)}}></input>
+            <button className='submit' onClick={handleClick}>SUBMIT</button>
             </div>
             <div className="right">
                 <img src="https://img.freepik.com/premium-vector/seo-content-illustration-concept-white-background_701961-3725.jpg?w=360" alt="" />

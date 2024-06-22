@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import FristPage from './Pages/FristPage';
-import Home from './Pages/Home';
+// import Home from './Pages/Home';
 import Router from './Router/Router';
-import Nav from './component/Nav';
-import Books from './Pages/Books';
-// import { BrowserRouter as Router} from 'react-router-dom'
-import SecondPage from './Pages/SecondPage'
+// import Nav from './Components/Nav'; 
+// import Books from './Pages/Books';
+
 import './App.css'
+import BookDetaila from './Pages/BookDetaila';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,14 +13,9 @@ function App() {
   return (
     <>
 
-    <Nav></Nav>
-    {/* <Home></Home> */}
+  
     <Router></Router>
-    <FristPage></FristPage>
-     <SecondPage>
-      </SecondPage> 
-      <Books></Books>
-
+    {/* <BookDetaila></BookDetaila> */}
     </>
   )
 }
